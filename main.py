@@ -14,6 +14,7 @@ import custom_matlab_functions
 import scipy
 from numpy import *
 import matplotlib.pyplot as plt
+from progress import printProgressBar
 
 H = NE_test_parameters.H
 P = NE_test_parameters.P
@@ -64,7 +65,7 @@ yy = np.array(yy)
 x_0 = yy[round(t_c/delta_t)]
 
 # Plot the Initial State Control.
-plt.style.use('seaborn')
+plt.style.use("seaborn")
 fig, ax_0 = plt.subplots()
 ax_0.plot(tspan, yy[:, 0], color='red', label = "gen 10")
 ax_0.plot(tspan, yy[:, 1], color='blue', label = "gen 2")
@@ -84,7 +85,7 @@ ax_0.set_xlabel('Time(sec)', fontsize=14)
 ax_0.set_ylabel('Phase', fontsize=14)
 
 # Plot the Initial State Control.
-plt.style.use('seaborn')
+plt.style.use("seaborn")
 fig, ax_1 = plt.subplots()
 ax_1.plot(tspan, yy[:, 9], color='red', label = "gen 10")
 ax_1.plot(tspan, yy[:, 10], color='blue', label = "gen 2")
@@ -115,7 +116,9 @@ X_0 = []
 X_1T = []
 X_T = []
 
+printProgressBar(0, N, prefix = 'Progress:', suffix = 'Complete', length = 50)
 for i in range(N):
+    printProgressBar(i, N, prefix = 'Progress:', suffix = 'Complete', length = 50)
     k = 0
     # random input
     u = 1e-3 * np.random.randn(m,round(T/delta_t))
