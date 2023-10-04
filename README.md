@@ -10,5 +10,4 @@ The codes compute optimal data-driven controls for fault recovery in power grid 
 - The swing.py file simulates power generators swing dynamics and requires NE_test_parameters.py file.
 - The custom_matlab_functions.py file contains two customized MATLAB functions.
 - The progress.py file contains a function shows the progress of running the code.
-
-Python Packeages numpy, scipy, math, and matplotlib are needed.
+- The requirement.txt file contains all the libraries, modules, and packages specific to the code.
